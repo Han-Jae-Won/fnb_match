@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700;900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-cream: #fbf6ee;
+  --color-sand: #f2e8da;
+  --color-oat: #e6d7c3;
+  --color-terra: #c8643b;
+  --color-terra-dark: #a94f2b;
+  --color-wine: #7a2e3a;
+  --color-espresso: #2b1d16;
+  --color-cocoa: #6b5546;
+  --color-olive: #6b7445;
+  --color-like: #3f9d6b;
+  --color-nope: #d5524b;
+  --color-super: #3c7fd1;
+
+  --font-sans: 'Pretendard Variable', Pretendard, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-serif: 'Gowun Batang', serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #eadcc8;
+  color: var(--color-espresso);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* dual range slider: two native inputs stacked */
+.dual-range input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background: transparent;
+  pointer-events: none;
+  margin: 0;
+}
+.dual-range input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 3px solid var(--color-terra);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
+  cursor: grab;
+}
+.dual-range input[type='range']::-moz-range-thumb {
+  pointer-events: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 3px solid var(--color-terra);
+  cursor: grab;
+}
+
+@keyframes float-heart {
+  0% { transform: translateY(0) scale(0.6); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translateY(-420px) scale(1.2); opacity: 0; }
+}
+.heart-particle {
+  animation: float-heart 2.6s ease-out infinite;
+}
+
+@keyframes typing-dot {
+  0%, 80%, 100% { opacity: 0.25; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-3px); }
+}
+.typing-dot { animation: typing-dot 1.2s infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.15s; }
+.typing-dot:nth-child(3) { animation-delay: 0.3s; }
